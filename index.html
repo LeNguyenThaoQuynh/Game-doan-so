@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./test-tube.css" />
+  </head>
+  <body>
+    <div id="introCard" class="screen" style="text-align: center">
+      <div class="card gift">
+        <h1>Try to guess</h1>
+        <p>Click the gift box to open mystery number</p>
+        <img src="./assets/gift-box.png" style="width: 50px" />
+      </div>
+    </div>
+    <div id="guessCard" class="screen" style="position: absolute">
+      <div class="card floating">
+        <h1>Guess what?</h1>
+        <p id="lbPrompt" style="font-style: italic">
+          Enter a number between 1 and 100
+        </p>
+        <input
+          type="number"
+          id="guessInput"
+          placeholder="Enter your guess..."
+        />
+        <button id="btGuess">Try</button>
+      </div>
+    </div>
+    <div id="gameOverCard" class="screen" style="position: absolute">
+      <div class="card floating">
+        <h1>Game Over</h1>
+        <p id="lbResultOnOver" style="font-weight: bold">
+          The mystery number is 0
+        </p>
+        <button id="btRestart" onclick="restartGame()">Restart</button>
+      </div>
+    </div>
+    <div id="winCard" class="screen" style="position: absolute">
+      <div class="card floating" style="align-content: center">
+        <h1>Congratulations</h1>
+        <p id="lbResultOnWin" style="font-weight: bold">
+          The mystery number is 0
+        </p>
+        <button id="btRestart" onclick="restartGame()">Restart</button>
+      </div>
+    </div>
+    <div
+      id="indicatorWave"
+      class="tube"
+      style="position: absolute; z-index: -1"
+    >
+      <div class="body" style="width: 100%">
+        <div class="liquid">
+          <div class="percentage"></div>
+        </div>
+      </div>
+      <div class="bubbles">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <canvas id="canvas"></canvas>
+    <script src="./main.js"></script>
+  </body>
+</html>
